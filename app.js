@@ -11,6 +11,9 @@ app.use(bodyParser.json())
 app.use(logger('dev'))
 
 require('./models/user')
+app.use(express.json())
+
+app.use(require('./routes/auth'))
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
